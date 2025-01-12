@@ -30,7 +30,15 @@ const Pagination = ({ currentPage, setCurrentPage, totalPage }) => {
           </button>
         ))}
       </div>
-      {currentPage < totalPage && <button>Next</button>}
+      {currentPage < totalPage && (
+        <button
+          onClick={() => {
+            setCurrentPage(currentPage + 1);
+          }}
+        >
+          Next
+        </button>
+      )}
     </div>
   );
 };
