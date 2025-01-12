@@ -1,0 +1,14 @@
+.table-head {
+  background-color: #495057;
+  color: white;
+  border: 2px solid #495057;
+}
+
+.table-row {
+  padding: 0.5rem 1 rem;
+}
+
+.table-data {
+  padding: 0.5rem 1 rem;
+  border: 1px solid #494949;
+}
