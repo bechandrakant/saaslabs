@@ -27,6 +27,7 @@ API (link : https://raw.githubusercontent.com/saaslabsco/frontend-assignment/ref
 
 1. React JS
 1. Unit tests has been added.
+1. a11y score of 95 as tested on `https://www.accessibilitychecker.org/`
 
 ## Steps
 

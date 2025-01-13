@@ -8,6 +8,8 @@ const contentPerPage = 5;
 
 function App() {
   const [fundings, setFundings] = useState([]);
+  const [loading, setLoading] = useState();
+  const [error, setError] = useState();
   const [currentPage, setCurrentPage] = useState(1);
 
   const dataToDisplay = [
@@ -17,12 +19,27 @@ function App() {
   ];
 
   useEffect(() => {
+    setLoading(true);
     fetch(URL)
       .then((res) => res.json())
       .then((data) => {
         setFundings(data);
+      })
+      .catch((err) => {
+        setError(err);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   }, []);
+
+  if (loading) {
+    return <h3 className="loading">Loading...</h3>;
+  }
+
+  if (error) {
+    return <h3 className="error">Error fetching data, please try again</h3>;
+  }
 
   const currentFundingSlice = fundings
     ? fundings.slice(
